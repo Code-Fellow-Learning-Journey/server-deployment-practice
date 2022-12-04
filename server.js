@@ -19,17 +19,18 @@ app.use(cors());
 
 // other example
 app.get('/', logger, (req, res, next) => {
-
-  res.status(200).send('Hello World');
+  res.status(200).send('Hello World!!!');
 });
 
-
+app.get('/bad', (req, res, next) => {
+  next('We have a problem');
+});
 
 app.use('/*', notFound);
 app.use(errorHandler);
 
-function start() {
-  app.listen(PORT, () => console.log('listening on port:'));
+function start(){
+  app.listen(PORT, () => console.log('listening on port: ', PORT));
 }
 
 module.exports = { start, app };
