@@ -1,7 +1,7 @@
 'use strict';
 
 
-const server = require('./server.js');
+const { start } = require('./server.js');
 
-server.start();
+start();
 
